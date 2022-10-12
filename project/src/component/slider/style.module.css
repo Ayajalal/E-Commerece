@@ -1,0 +1,37 @@
+.slider-pic {
+  height: 600px;
+}
+.carousel slide {
+  height: 600px;
+}
+
+.caption {
+  position: absolute;
+  top: 173px;
+  right: 140px;
+}
+.caption h1 {
+  width: 485px;
+  height: 160px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 60px;
+  font-weight: 400;
+
+  font-style: normal;
+  letter-spacing: 0px;
+  /* text-align: left; */
+  line-height: 80px;
+}
+.captionNext a {
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 1);
+}
+.captionNext hr {
+  width: 80px;
+  height: 2px;
+  color: #ffffff;
+  opacity: 1;
+}

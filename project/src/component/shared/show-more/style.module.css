@@ -1,0 +1,14 @@
+
+.showMore{
+    text-decoration: none;
+    color:rgba(255,255,255,1);
+    text-align: center;
+    
+    background-color: #33333A;
+   border:none;
+   align-items: center;
+ margin-top: 5px;
+ width:130px;
+ height: 40px;
+   margin-top: 30px;
+}

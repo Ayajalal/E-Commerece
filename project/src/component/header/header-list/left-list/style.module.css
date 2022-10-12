@@ -1,0 +1,154 @@
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: #33333a;
+
+  font-size: 12px;
+}
+li a:hover {
+  cursor: pointer;
+  color: orange;
+}
+.main-nav {
+  position: relative;
+  width: 100%;
+  max-height: 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  opacity: 1;
+  color: #030303;
+  font-family: "MarkPro";
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 60px;
+}
+
+.menu-link ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.social-media {
+  justify-content: space-between;
+}
+.social-media ul {
+  display: flex;
+  gap: 29px;
+}
+.menu-link ul .leftNav li {
+  display: flex;
+
+  flex-direction: row;
+  display: inline;
+
+  margin-right: 40px;
+}
+.menu-link ul .leftNav {
+  display: flex;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 1440px) {
+  .leftNav li a {
+    font-size: 12px;
+  }
+  .social-media ul {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .leftNav li a {
+    font-size: 12px;
+  }
+  .social-media ul {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .main-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-link ul .leftNav {
+    display: none;
+  }
+  .nav-links-mobile {
+    left: 0px;
+    top: 80px;
+    /* position: absolute; */
+    height: 230px;
+    width: 100%;
+    background-color: aliceblue;
+    display: block;
+    color: black;
+
+    /* align-items: center;
+    justify-content: center; */
+    list-style: none;
+
+    transition: all 0.5s ease-out;
+  }
+
+  .mobile-menu-icon {
+    border: none;
+    background-color: white;
+    color: #030303;
+    top: 2px;
+    right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* 
+.leftList{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+.leftList h4{
+    margin-right: 10px;
+    opacity: 1;
+color: rgba(82,82,82,1);
+font-family: "MarkPro";
+font-size: 40px;
+font-weight: 400;
+font-style: normal;
+letter-spacing: 0px;
+text-align: left;
+line-height: 60px;
+}
+.leftList button{
+    border:none;
+    background-color: rgba(255,255,255, 1);
+    color: #33333A;
+}
+.arrow{
+
+
+font-size: 8px;
+} */

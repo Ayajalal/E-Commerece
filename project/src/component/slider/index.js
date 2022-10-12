@@ -1,33 +1,51 @@
-import "./style.css";
+import style from "./style.module.css";
 
 function Slider() {
-  const img = ["./images/headerImg1.png", "./images/headerImg4.png", "./images/headerImg3.png"];
+  const slider = [
+    {
+      image: "./images/headerImg1.png",
+      caption: "Perfume Tips Tricks",
+      subCaption: "Shop Now",
+    },
+    {
+      image: "./images/headerImg4.png",
+      caption: "Perfume Tips Tricks",
+      subCaption: "Shop Now",
+    },
+    {
+      image: "./images/headerImg3.png",
+      caption: "Perfume Tips Tricks",
+      subCaption: "Shop Now",
+    },
+  ];
   return (
     <>
       <div
+        style={{ height: "600px" }}
         id="carouselExampleControls"
         class="carousel slide"
-        data-bs-ride="carousel"
+        data-bs-touch="false"
       >
-        <div class="carousel-inner">
-          {img.map((item) => {
+        <div class="carousel-inner" style={{ height: "600px" }}>
+          {slider.map((item, index) => {
+            let { image, caption, subCaption } = item;
             return (
-              <div class="carousel-item active">
-                <img src={item} class="d-block w-100" alt="..."></img>
-                <div className="caption">
-                  <h1>Perfume Tips Tricks</h1>
-                 <div className="captionNext">
-                  <a href="">SHOP NOW</a>
-                  <hr ></hr>
+              <div className={`carousel-item ${index === 0 ? "active" : "no"}`}>
+                <img src={image} class="d-block w-100" alt="..."></img>
+                <div className={style.caption}>
+                  <h1>{caption}</h1>
+                  <div className={style.captionNext}>
+                    <a href="">{subCaption}</a>
+                    <hr></hr>
                   </div>
                 </div>
-
               </div>
             );
           })}
         </div>
         <button
           class="carousel-control-prev"
+          style={{ top: "300px" }}
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="prev"
@@ -37,6 +55,7 @@ function Slider() {
         </button>
         <button
           class="carousel-control-next"
+          style={{ top: "300px" }}
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="next"

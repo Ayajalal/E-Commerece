@@ -1,7 +1,7 @@
- import './style.css'
+ import style from './style.module.css' 
  function TopHeader(){
 return (
-<div className="topHeader">
+<div className={style.topHeader}>
      Free Shipping for orders above USD 150
     
 </div>)

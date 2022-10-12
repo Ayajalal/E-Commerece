@@ -1,6 +1,7 @@
-import './style.css'
+
 import TopHeader from './top-header'
 import HeaderList from './header-list'
+import LeftList from './header-list/left-list';
 
 
  function HeaderComponent(){
@@ -8,7 +9,7 @@ import HeaderList from './header-list'
   return (
     < >
  <TopHeader></TopHeader>
- <HeaderList></HeaderList>
+ <LeftList/>
 
 
     </>

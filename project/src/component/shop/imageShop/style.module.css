@@ -1,0 +1,11 @@
+
+.shopImg{
+    opacity: 1;
+background-size: 100%;
+width:263px;
+height: 400px;
+
+}
+.ContainerShop{
+    position: relative;
+}
