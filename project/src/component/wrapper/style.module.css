@@ -1,48 +1,69 @@
-.wrapper{
-
+.wrapper {
   width: 100%;
-    opacity: 1;
-    height: 1210px;
-background-color: #FCFCFC;
+  opacity: 1;
+
+  background-color: #fcfcfc;
 }
 
-.wrapperCard{
-
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
-    border:none;
-    padding-left: 150px;
-    padding-right:120px ;
-
+.wrapperCard {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding-left: 150px;
+  padding-right: 120px;
 }
-.card{
-    background-color: #FCFCFC;
-    border:none;
+.card {
+  background-color: #fcfcfc;
+  border: none;
   margin-right: 30px;
-width: 263px;
-height:481px;
-margin-bottom: 39px;
-opacity: 1;
-color: rgba(51,51,58,1);
-font-family: "VLNewParisHeadline";
-font-size: 16px;
-font-weight: 400;
-font-style: normal;
-letter-spacing: 0px;
-text-align: left;
-line-height: 25px;
-
-
-
-
+  width: 263px;
+  height: 481px;
+  margin-bottom: 39px;
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+  position: relative;
 }
-.card img{
-    background-size: 100%;
-    
+.card img {
+  background-size: 100%;
 }
-.card-body{
-    background-color: #FCFCFC;
+.card-body {
+  background-color: #fcfcfc;
+}
+.btn-view {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 20px;
+  font-family: proxima-nova, sans-serif;
+  background-color: #33333a;
+  border: transparent;
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0;
+  color: #fff;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.wrapperCard .card:hover .btn-view {
+  opacity: 1;
+}
+.card:hover img {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 922px) {
+}
+@media only screen and (max-width: 750px) {
 }

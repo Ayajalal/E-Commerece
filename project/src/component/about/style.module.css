@@ -1,111 +1,119 @@
-.aboutWrapper{
-    height: 520px;
-    width:1139px ;
-    margin-left: 150px;
-    margin-right: 150px;
-  
+.aboutWrapper {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.aboutWrapper h1 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 42px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: center;
+  line-height: 60px;
+  align-items: center;
 
+  justify-content: center;
+}
+.aboutRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+.AboutLeft img {
+  width: 555px;
+  height: 430px;
+  display: left;
+}
+.AboutRight {
+  margin-left: 29px;
+}
+.AboutRight .p1 {
+  flex: right;
+  opacity: 1;
+  color: rgba(3, 3, 3, 1);
+  font-family: "ProximaNova-Light";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 30px;
+}
+.AboutRight .p2 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+.AboutRight .p3 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.AboutRight .p4 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
 
+  text-transform: uppercase;
 }
-.aboutWrapper h1{
-    opacity: 1;
-    color: rgba(51,51,58,1);
-    font-family: "VLNewParisHeadline";
-    font-size: 42px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 0px;
-    text-align: center;
-    line-height: 60px; 
-    align-items: center;
+.AboutRight .p5 {
+  width: 76px;
+  height: 90px;
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "VLNewParisHeadline";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.AboutRight .p6 {
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: left;
 
-    justify-content: center;
+  text-transform: uppercase;
 }
-.aboutRow{
-    display: flex;
-
+.AboutRight .p7 {
+  width: 100px;
+  height: 60px;
 }
-.AboutLeft img{
-    width:555px ;
-    height:430px ;
-    display: left;
-}
-.AboutRight{
-    margin-left: 29px;
-}
-.AboutRight .p1{
-  
-    flex:right;
-    opacity: 1;
-color: rgba(3,3,3,1);
-font-family: "ProximaNova-Light";
-font-size: 18px;
-font-weight: 300;
-font-style: normal;
-letter-spacing: 0px;
-text-align: left;
-line-height: 30px;
-}
-.AboutRight .p2{
- opacity: 1;
-color: rgba(51,51,58,1);
-font-family: "ProximaNova-Regular";
-font-size: 12px;
-font-weight: 400;
-font-style: normal;
-letter-spacing: 1px;
-text-align: left;
-line-height: 40px;
-text-transform: uppercase;
-}
-.AboutRight .p3{
-    opacity: 1;
-color: rgba(51,51,58,1);
-font-family: "VLNewParisHeadline";
-font-size: 18px;
-font-weight: 400;
-font-style: normal;
-letter-spacing: 0px;
-text-align: left;
-
-}
-.AboutRight .p4{
-  
-    opacity: 1;
-color: rgba(51,51,58,1);
-font-family: "ProximaNova-Regular";
-font-size: 12px;
-font-weight: 400;
-font-style: normal;
-letter-spacing: 1px;
-text-align: left;
-
-text-transform: uppercase;
-}
-.AboutRight .p5{
-    width:76px ;
-    height:90px ;
-    opacity: 1;
-color: rgba(51,51,58,1);
-font-family: "VLNewParisHeadline";
-font-size: 18px;
-font-weight: 400;
-font-style: normal;
-letter-spacing: 0px;
-text-align: left;
-
-}
-.AboutRight .p6{opacity: 1;
-    color: rgba(51,51,58,1);
-    font-family: "ProximaNova-Regular";
-    font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-align: left;
-    
-    text-transform: uppercase;}
-.AboutRight .p7{
-width:100px;
-height: 60px;
+@media screen and (max-width: 767px) {
+  .aboutRow {
+    /* flex-flow: wrap; */
+  }
+  .AboutLeft {
+    display: block;
+    order: 1;
+    width: 100%;
+  }
+  .AboutRight {
+    display: block;
+    order: 2;
+    width: 100%;
+  }
 }

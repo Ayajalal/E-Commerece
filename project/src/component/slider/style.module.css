@@ -1,5 +1,4 @@
 .slider-pic {
-  height: 600px;
 }
 .carousel slide {
   height: 600px;
@@ -34,4 +33,50 @@
   height: 2px;
   color: #ffffff;
   opacity: 1;
+}
+
+@media only screen and (max-width: 922px) {
+  .caption {
+    position: absolute;
+    top: 173px;
+    right: 28px;
+  }
+  .caption h1 {
+    width: 285px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .caption h1 {
+    width: 285px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .caption {
+    top: 96px;
+    right: 28px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .caption h1 {
+    width: 155px;
+    height: 40px;
+    font-size: 10px;
+    font-weight: 100;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .caption h1 {
+    width: 155px;
+    height: 40px;
+    font-size: 10px;
+    font-weight: 100;
+  }
+  .caption {
+    top: 15px;
+    right: 28px;
+  }
 }

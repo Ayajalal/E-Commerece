@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MenuList from "../menu-list";
 import Icon from "../../../shared/icon";
 function LeftList() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isShow, setIsShow] = useState(false); ///change name
 
   let listRight = ["fal fa-heart", "fal fa-search", "fal fa-shopping-bag"];
   return (
@@ -17,7 +17,7 @@ function LeftList() {
             <li>
               <h2 className={style.logo}>matter</h2>
             </li>
-            <div className={style.leftNav} onClick={() => setIsMobile(false)}>
+            <div className={style.leftNav}>
               <MenuList></MenuList>
             </div>
           </ul>
@@ -31,33 +31,27 @@ function LeftList() {
             {listRight.map((item) => {
               return (
                 <li>
-                  <i className={item}></i>
+                  <Icon nameIcon={item}></Icon>
                 </li>
               );
             })}
           </ul>
         </div>
-        <button
+        <div
           className={style["mobile-menu-icon"]}
-          onClick={() => setIsMobile(!isMobile)}
+          onClick={() => {
+            console.log("isMobile" + isShow);
+            setIsShow(!isShow);
+          }}
         >
-          {isMobile ? (
-            <i className="fas fa-times"></i>
-          ) : (
-            <i className="fas fa-bars"></i>
-          )}
-        </button>
-        {isMobile ? (
-          <div
-            className={style["nav-links-mobile"]}
-            onClick={() => setIsMobile(false)}
-          >
-            <MenuList />
-          </div>
-        ) : (
-          ""
-        )}
+          <Icon nameIcon={`fas ${!isShow ? "fa-bars" : "fa-times"}`} />
+        </div>
       </nav>
+      {isShow ? (
+        <div className={style["nav-links-mobile"]}>
+          <MenuList />
+        </div>
+      ) : null}
     </header>
   );
 }

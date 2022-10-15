@@ -1,6 +1,7 @@
 import Title from "../shared/title";
 import style from "./style.module.css";
 import OrangeNew from "../shared/orangeNew";
+import QuickNow from "../shared/quick-now";
 function Wrapper() {
   const cards = [
     {
@@ -68,10 +69,13 @@ function Wrapper() {
               {flagNew === "true" ? <OrangeNew /> : ""}
 
               <img src={image} class="card-img-top" alt="..."></img>
-              <div className="card-body">
+              <button className={style["btn-view"]}>Quick Now</button>
+              <div className={style["card-body"]}>
                 <p className="card-text">{name}</p>
                 <p className="card-text">{salary}</p>
               </div>
+
+              {/* <QuickNow st={style["btn-view"]} /> */}
             </div>
           );
         })}
