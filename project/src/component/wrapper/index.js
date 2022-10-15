@@ -70,12 +70,11 @@ function Wrapper() {
 
               <img src={image} class="card-img-top" alt="..."></img>
               <button className={style["btn-view"]}>Quick Now</button>
+              {/* <QuickNow st={style["btn-view"]} /> */}
               <div className={style["card-body"]}>
                 <p className="card-text">{name}</p>
                 <p className="card-text">{salary}</p>
               </div>
-
-              {/* <QuickNow st={style["btn-view"]} /> */}
             </div>
           );
         })}
