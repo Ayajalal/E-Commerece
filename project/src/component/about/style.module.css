@@ -1,33 +1,22 @@
 .aboutWrapper {
-  margin-left: 150px;
-  margin-right: 150px;
+  width: 85%;
+  margin: auto;
 }
-.aboutWrapper h1 {
-  opacity: 1;
-  color: rgba(51, 51, 58, 1);
-  font-family: "VLNewParisHeadline";
-  font-size: 42px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0px;
-  text-align: center;
-  line-height: 60px;
-  align-items: center;
 
-  justify-content: center;
-}
 .aboutRow {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.AboutLeft,
+.AboutRight {
+  width: 47%;
 }
 .AboutLeft img {
-  width: 555px;
-  height: 430px;
+  width: 100%;
+
   display: left;
 }
-.AboutRight {
-  margin-left: 29px;
-}
+
 .AboutRight .p1 {
   flex: right;
   opacity: 1;
@@ -102,18 +91,13 @@
   width: 100px;
   height: 60px;
 }
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 786px) {
   .aboutRow {
-    /* flex-flow: wrap; */
+    flex-direction: column;
   }
-  .AboutLeft {
-    display: block;
-    order: 1;
-    width: 100%;
-  }
+  .AboutLeft,
   .AboutRight {
-    display: block;
-    order: 2;
     width: 100%;
+    margin-top: 20px;
   }
 }

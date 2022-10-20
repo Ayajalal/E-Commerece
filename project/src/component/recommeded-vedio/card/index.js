@@ -15,10 +15,14 @@ function CardVedio() {
           <div className={style.card}>
             <div className={style.img}>
               <VedioPlay />
-              <img src={image} alt="..."></img>
+              <img
+                src={image}
+                alt="..."
+                // style={{ width: "22%", height: "15%" }}
+              ></img>
             </div>
-            <div className="card-body">
-              <h5 className="card-title">{name}</h5>
+            <div className={style["card-body"]}>
+              <h6 className="card-title">{name}</h6>
             </div>
           </div>
         );

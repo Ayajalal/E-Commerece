@@ -3,7 +3,23 @@
 .carousel slide {
   height: 600px;
 }
-
+.carousel-control-prev {
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  transform: translateX(-50%);
+  /* opacity: 0; */
+}
+.carousel-control-next {
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  transform: translateX(-50%);
+}
 .caption {
   position: absolute;
   top: 173px;
