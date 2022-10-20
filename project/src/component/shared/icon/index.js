@@ -5,7 +5,7 @@ const Icon = ({ nameIcon, index }) => {
     console.log("Refereh");
   }, []);
   // const iconStyle = index == 0 ? style.icon : nameIcon;className={iconStyle}
-  return <i className={nameIcon}></i>;
+  return <i className={nameIcon} style={{ color: "gray" }}></i>;
 };
 
 export default Icon;

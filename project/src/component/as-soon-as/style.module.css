@@ -1,4 +1,19 @@
-.soonWrapper{
-    background-color: #FFFFFF;
-    
+.soonWrapper {
+  background-color: #ffffff;
+  width: 85%;
+  margin: auto;
 }
+.soonWrapper img {
+  width: 100%;
+}
+/* @media only screen and (max-width: 786px) {
+  .soonWrapper img {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .soonWrapper img {
+    
+  }
+} */

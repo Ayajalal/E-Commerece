@@ -1,37 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .container {
-  max-width: 1440px;
+  width: 85%;
   margin: auto;
 }
 .row {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 ul {
   list-style: none;
   margin-inline-start: 0px;
   padding-inline-start: 0px;
+  padding-left: 0px !important;
 }
 .footer {
   background-color: #24262b;
-  padding: 70px 0;
 }
-.footer-col {
-  width: 18%;
-  padding: 0 15px;
+.copyright {
+  text-align: center;
+  color: rgba(222, 222, 222, 1);
+
+  margin-bottom: auto !important;
 }
-.footer-col h4 {
+/* p {
+  margin: 0 !important;
+} */
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+}
+.footer-col h5 {
   font-size: 18px;
-  color: #ffffff;
+  color: #dedede;
   text-transform: capitalize;
   margin-bottom: 35px;
-  font-weight: 500;
+
   position: relative;
 }
 /* .footer-col h4::before {
@@ -51,15 +55,15 @@ ul {
   opacity: 1;
   background-color: rgba(51, 51, 58, 1);
 }
-.footer-col ul li:not(:last-child) {
+/* .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
   align-items: start;
   text-align: left;
-  padding: 0px;
-}
+  padding: 0px; */
+
 .footer-col ul li a {
-  text-align: left;
-  align-items: start;
+  /* text-align: left;
+  align-items: start; */
   font-size: 16px;
   text-transform: capitalize;
   color: #ffffff;
@@ -79,7 +83,7 @@ ul {
   height: 40px;
   width: 40px;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 10px 10px 0;
+
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
@@ -90,22 +94,39 @@ ul {
   color: #24262b;
   background-color: #ffffff;
 }
-button {
+.footer-col button {
+  margin-top: 20px;
   width: 166px;
   height: 40px;
   border: none;
   margin-bottom: 10px;
+  opacity: 1;
+  color: rgba(51, 51, 58, 1);
+  font-family: "ProximaNova-Semibold";
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 /*responsive*/
-@media (max-width: 767px) {
-  .footer-col {
+
+@media only screen and (max-width: 786px) {
+  .container .row {
+    /* margin-right: 30px; */
+  }
+  .container .row .footer-col {
     width: 50%;
-    margin-bottom: 30px;
   }
 }
-@media (max-width: 574px) {
-  .footer-col {
-    width: 100%;
+
+@media only screen and (max-width: 480px) {
+  .container .row {
+    flex-direction: column;
+
+    /* margin-right: 30px; */
   }
 }

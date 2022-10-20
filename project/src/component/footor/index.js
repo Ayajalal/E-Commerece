@@ -7,7 +7,7 @@ function Footer() {
       <div className={style.container}>
         <div className={style.row}>
           <div className={style["footer-col"]}>
-            <h4>Categories</h4>
+            <h5>Categories</h5>
             <ul>
               <li>
                 <a href="#"> About us</a>
@@ -27,7 +27,7 @@ function Footer() {
             </ul>
           </div>
           <div className={style["footer-col"]}>
-            <h4>Partners</h4>
+            <h5>Partners</h5>
             <ul>
               <li>
                 <a href="#"> Support</a>
@@ -44,7 +44,7 @@ function Footer() {
             </ul>
           </div>
           <div className={style["footer-col"]}>
-            <h4> Contact us</h4>
+            <h5> Contact us</h5>
             <ul>
               <li>
                 <a href="#">26A Pagoda St, TANGS, </a>
@@ -61,13 +61,12 @@ function Footer() {
             </ul>
           </div>
           <div className={style["footer-col"]}>
-            <h4> Subscribe to newsletter</h4>
+            <h5> Subscribe to newsletter</h5>
 
             <input
               placeholder="Enter your email"
               className={style.email}
             ></input>
-            <button>Subscribe</button>
 
             <div class="col mt-4">
               <a href="" className="me-2">
@@ -78,7 +77,11 @@ function Footer() {
               </a>
             </div>
           </div>
+          <div className={style["footer-col"]}>
+            <button>Subscribe</button>
+          </div>
         </div>
+        <p className={style.copyright}>© Copyright Matter PTE LTD 2017</p>
       </div>
     </footer>
   );
