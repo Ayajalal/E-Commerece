@@ -32,8 +32,13 @@
   line-height: 25px;
   position: relative;
 }
-.card img {
-  background-size: 100%;
+.mainImg {
+  width: 263px;
+  height: 390px;
+}
+.mainImg img {
+  height: 100%;
+  width: 100%;
 }
 .card-body {
   background-color: #fcfcfc;
