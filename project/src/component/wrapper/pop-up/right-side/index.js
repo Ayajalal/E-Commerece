@@ -30,25 +30,18 @@ const RightSide = ({ updatePopUp, modelIsOpen, item, index }) => {
       setCounter(counter - 1);
     }
   };
-  const [ratings, setRating] = useState(Math.floor(rating));
+  // const [ratings, setRating] = useState(Math.floor(rating));
 
-  const handleChange = (value) => {
-    setRating(value);
-  };
+  // const handleChange = (value) => {
+  //   setRating(value);
+  // };
   return (
     <div className={style.right}>
       <h5>{title}</h5>
       <div className={style.heading}>
         <h6>${price}</h6>
         <div class={style.rating}>
-          <StarRating
-            count={5}
-            size={20}
-            value={ratings}
-            activeColor={"#FF6008"}
-            inactiveColor={"gray"}
-            onChange={handleChange}
-          />
+          <StarRating value={rating} />
           <span> {rating} of 5</span>
         </div>
       </div>

@@ -22,7 +22,7 @@ function CardVedio() {
               ></img>
             </div>
             <div className={style["card-body"]}>
-              <h6 className="card-title">{name}</h6>
+              <h6 className={style["card-title"]}>{name}</h6>
             </div>
           </div>
         );
