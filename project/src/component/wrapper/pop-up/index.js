@@ -27,7 +27,6 @@ const PopUp = ({ updatePopUp, modelIsOpen, item, index }) => {
         },
       }}
       isOpen={modelIsOpen}
-      onClick={updatePopUp}
 
       // onRequestClose={updatePopUp}
     >

@@ -89,7 +89,6 @@ div a {
   text-decoration: none;
 }
 .rating {
-  /* display: flex;
-justify-content: space-between;
-align-items: ; */
+  display: flex;
+  justify-content: space-between;
 }

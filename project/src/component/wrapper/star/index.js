@@ -13,7 +13,7 @@ const StarRating = ({ value }) => {
         value={value}
         // onChange={handelChange}
         precision={0.1}
-        size="medium"
+        size="small"
         readOnly
       ></Rating>
     </Stack>
