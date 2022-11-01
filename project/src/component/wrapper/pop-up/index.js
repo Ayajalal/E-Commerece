@@ -3,9 +3,9 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import style from "./style.module.css";
 
-import ProductSlider from "./image";
+import ProductSlider from "./product-slider";
 
-import ProductDetails from "./right-side";
+import ProductDetails from "./product-details";
 const PopUp = ({ closePopUp, open, item, index }) => {
   const {
     title,
