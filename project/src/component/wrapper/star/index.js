@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Stack, Rating } from "@mui/material";
 
 const StarRating = ({ value }) => {

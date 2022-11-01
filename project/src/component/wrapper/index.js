@@ -1,20 +1,20 @@
 import Title from "../shared/title";
 import style from "./style.module.css";
 import OrangeNew from "../shared/orangeNew";
-import QuickNow from "../shared/quick-now";
-import Modal from "react-modal";
+
 import React, { useState } from "react";
 import PopUp from "./pop-up";
 import data from "./data.json";
 function Wrapper() {
   let { products } = data;
-  const [modelIsOpen, setModelIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [product, setProducts] = useState([]);
   const handelProduct = (item, index) => {
     setProducts(item);
   };
-  const updatePopUp = () => {
-    setModelIsOpen(false);
+  const closePopUp = () => {
+    //close
+    setOpen(false);
   };
 
   console.log("products", { products });
@@ -36,7 +36,7 @@ function Wrapper() {
               <button
                 className={style["btn-view"]}
                 onClick={() => {
-                  setModelIsOpen(true);
+                  setOpen(true);
                   handelProduct(item, index);
                 }}
               >
@@ -44,8 +44,8 @@ function Wrapper() {
               </button>
 
               <PopUp
-                modelIsOpen={modelIsOpen}
-                updatePopUp={updatePopUp}
+                open={open}
+                closePopUp={closePopUp}
                 item={product}
                 title={title}
                 index={index}

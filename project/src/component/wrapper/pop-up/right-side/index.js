@@ -3,16 +3,15 @@ import React, { useState } from "react";
 import style from "./style.module.css";
 import Icon from "../../../shared/icon";
 import StarRating from "../../star";
-const RightSide = ({ updatePopUp, modelIsOpen, item, index }) => {
+const ProductDetails = ({ updatePopUp, modelIsOpen, item, index }) => {
   const [counter, setCounter] = useState(0);
 
-  let sizes = ["XS", "S", "M", "L", "XL", "2XL"];
   const {
     title,
     price,
-    thumbnail,
+
     brand,
-    images,
+
     description,
     category,
     rating,
@@ -80,4 +79,4 @@ const RightSide = ({ updatePopUp, modelIsOpen, item, index }) => {
   );
 };
 
-export default RightSide;
+export default ProductDetails;

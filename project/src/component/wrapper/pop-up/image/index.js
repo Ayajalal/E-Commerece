@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import React, { useRef, useState } from "react";
-const Image = ({ images, thumbnail }) => {
+const ProductSlider = ({ images, thumbnail }) => {
   const [img, setImg] = useState(thumbnail);
   const refs = useRef([]);
   refs.current = [];
@@ -43,4 +43,4 @@ const Image = ({ images, thumbnail }) => {
   );
 };
 
-export default Image;
+export default ProductSlider;

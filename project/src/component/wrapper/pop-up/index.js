@@ -1,12 +1,12 @@
-import Modal from "react-modal";
-import React, { useState } from "react";
-import style from "./style.module.css";
-import Icon from "../../shared/icon";
-import Image from "./image";
-import RightSide from "./right-side";
-const PopUp = ({ updatePopUp, modelIsOpen, item, index }) => {
-  const [counter, setCounter] = useState(0);
+import { Dialog, DialogTitle, DialogContent } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
+import style from "./style.module.css";
+
+import ProductSlider from "./image";
+
+import ProductDetails from "./right-side";
+const PopUp = ({ closePopUp, open, item, index }) => {
   const {
     title,
 
@@ -17,32 +17,28 @@ const PopUp = ({ updatePopUp, modelIsOpen, item, index }) => {
   console.log("on popup", { item });
 
   return (
-    <Modal
-      style={{
-        overlay: {
-          backgroundColor: "gray",
-        },
-        content: {
-          color: "#030303",
-        },
-      }}
-      isOpen={modelIsOpen}
-
-      // onRequestClose={updatePopUp}
-    >
+    <Dialog sx={{ m: 0, p: 2 }} fullScreen={true} open={open}>
       <div className={style.wrapper}>
-        <div className={style.title}>
+        <DialogTitle>
           <h5>{title}</h5>
-          <div className={style.icon} onClick={updatePopUp}>
-            <Icon nameIcon={"fal fa-times fa-2x"} />
+          <CloseIcon
+            onClick={closePopUp}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: (theme) => theme.palette.grey[500],
+            }}
+          />
+        </DialogTitle>
+        <DialogContent>
+          <div className={style.main}>
+            <ProductSlider images={images} thumbnail={thumbnail} />
+            <ProductDetails item={item} />
           </div>
-        </div>
-        <div className={style.main}>
-          <Image images={images} thumbnail={thumbnail} />
-          <RightSide item={item} />
-        </div>
+        </DialogContent>
       </div>
-    </Modal>
+    </Dialog>
   );
 };
 
