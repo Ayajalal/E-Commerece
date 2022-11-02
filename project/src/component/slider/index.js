@@ -21,12 +21,11 @@ function Slider() {
   return (
     <>
       <div
-        style={{ height: "600px" }}
         id="carouselExampleControls"
         class="carousel slide"
         data-bs-touch="false"
       >
-        <div class="carousel-inner" style={{ height: "600px" }}>
+        <div class="carousel-inner">
           {slider.map((item, index) => {
             let { image, caption, subCaption } = item;
             return (
