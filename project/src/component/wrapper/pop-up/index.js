@@ -14,6 +14,7 @@ const PopUp = ({ closePopUp, open, item, index }) => {
 
     images,
   } = item;
+
   console.log("on popup", { item });
 
   return (

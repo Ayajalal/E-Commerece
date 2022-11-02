@@ -92,3 +92,13 @@ div a {
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 786px) {
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .right {
+    width: 100%;
+  }
+}
