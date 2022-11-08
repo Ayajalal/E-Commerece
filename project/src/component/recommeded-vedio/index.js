@@ -6,8 +6,12 @@ function RecommendedVideos() {
   return (
     <div className={style.all}>
       <Title headTitle={"Recommended Videos"}></Title>
-      <CardVedio></CardVedio>
-      <ShowMore buttonTitle={"Show More"} />
+      <div className={style.wrapper}>
+        <CardVedio></CardVedio>
+        <div className={style.centerButt}>
+          <ShowMore buttonTitle={"Show More"} />
+        </div>
+      </div>
     </div>
   );
 }

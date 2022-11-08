@@ -5,3 +5,16 @@
   width: 85%;
   margin: auto;
 } */
+.centerButt {
+  width: 100%;
+  min-height: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}

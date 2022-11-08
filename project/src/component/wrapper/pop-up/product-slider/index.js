@@ -21,7 +21,7 @@ const ProductSlider = ({ images, thumbnail }) => {
   return (
     <div className={style.left}>
       {images && (
-        <div className={style.imgLeft}>
+        <div className={style["imgLeft scroll-auto "]}>
           {images.map((image, index) => (
             <img
               src={image}

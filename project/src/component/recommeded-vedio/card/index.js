@@ -1,5 +1,6 @@
 import style from "./style.module.css";
 import VedioPlay from "../../shared/playVedio";
+import ShowMore from "../../shared/show-more";
 function CardVedio() {
   let vedio = [
     { name: "Jamdani", image: "./images/v1.png" },
