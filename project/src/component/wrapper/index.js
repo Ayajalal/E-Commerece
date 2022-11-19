@@ -1,64 +1,28 @@
 import Title from "../shared/title";
 import style from "./style.module.css";
 import OrangeNew from "../shared/orangeNew";
+import Grid from "@mui/material/Grid";
 
 import React, { useState } from "react";
-import PopUp from "./pop-up";
-import data from "./data.json";
-function Wrapper() {
-  let { products } = data;
-  const [open, setOpen] = useState(false);
-  const [product, setProducts] = useState([]);
-  const handelProduct = (item, index) => {
-    setProducts(item);
-  };
-  const closePopUp = () => {
-    //close
-    setOpen(false);
-  };
+import CardProduct from "../shared/card-product";
 
-  console.log("products", { products });
+function Wrapper({ data }) {
   return (
     <div className={style.wrapper}>
       <Title headTitle={"Feature"} />
       <div className={style.wrapperCard}>
-        {products.map((item, index) => {
-          let { title, price, thumbnail, flagNew } = item;
-          console.log("item", item);
-          return index > 7 ? (
-            ""
-          ) : (
-            <div className={style.card} style={{ border: "none" }}>
-              {flagNew === "true" ? <OrangeNew /> : ""}
-              <div className={style.mainImg}>
-                <img src={thumbnail} class="card-img-top" alt="..."></img>
-              </div>
-              <button
-                className={style["btn-view"]}
-                onClick={() => {
-                  setOpen(true);
-                  handelProduct(item, index);
-                }}
-              >
-                Quick Now
-              </button>
-
-              <PopUp
-                open={open}
-                closePopUp={closePopUp}
-                item={product}
-                title={title}
-                index={index}
-              />
-
-              {/* <QuickNow st={style["btn-view"]} /> */}
-              <div className={style["card-body"]}>
-                <p className="card-text">{title}</p>
-                <p className="card-text">{price}</p>
-              </div>
-            </div>
-          );
-        })}
+        <Grid container spacing={2} display="flex">
+          {data.map((item, index) => {
+            console.log("item", item);
+            return index > 7 ? (
+              ""
+            ) : (
+              <Grid item xs={12} sm={6} md={3}>
+                <CardProduct item={item}></CardProduct>
+              </Grid>
+            );
+          })}
+        </Grid>
       </div>
     </div>
   );

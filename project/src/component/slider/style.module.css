@@ -1,20 +1,14 @@
-.carousel-control-prev {
-  position: absolute;
-  background-color: transparent;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  transform: translateX(-50%);
-  /* opacity: 0; */
+.carousel {
+  display: flex;
+  justify-content: center;
 }
-.carousel-control-next {
-  position: absolute;
-  background-color: transparent;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  transform: translateX(-50%);
+.carousel .slide {
+  height: 60vh;
 }
+.carousel .thumbs-wrapper .thumbs {
+  display: none;
+}
+
 .caption {
   position: absolute;
   top: 173px;
@@ -39,7 +33,7 @@
 
   color: rgba(255, 255, 255, 1);
 }
-.captionNext hr {
+.caption .captionNext hr {
   width: 80px;
   height: 2px;
   color: #ffffff;

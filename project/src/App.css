@@ -9,6 +9,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.notdisplayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
+}
+
 /* .App {
   text-align: center;
 }

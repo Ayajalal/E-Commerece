@@ -15,7 +15,7 @@ const PopUp = ({ closePopUp, open, item, index }) => {
     images,
   } = item;
 
-  console.log("on popup", { item });
+  // console.log("on popup", { item });
 
   return (
     <Dialog sx={{ m: 0, p: 2 }} fullScreen={true} open={open}>
