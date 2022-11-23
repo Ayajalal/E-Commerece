@@ -13,12 +13,12 @@ const Home = ({ data }) => {
   return (
     <>
       <Slider></Slider>
-      <Wrapper data={data}></Wrapper>
+      <Wrapper></Wrapper>
       <About></About>
       <Explore></Explore>
       <Shop />
       <RecommendedVideos />
-      <AsSoonAs />)
+      <AsSoonAs />
     </>
   );
 };

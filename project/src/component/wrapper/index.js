@@ -3,10 +3,19 @@ import style from "./style.module.css";
 import OrangeNew from "../shared/orangeNew";
 import Grid from "@mui/material/Grid";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardProduct from "../shared/card-product";
-
-function Wrapper({ data }) {
+import axios from "axios";
+function Wrapper() {
+  const [data, setData] = useState([]);
+  const getAllData = async () => {
+    const res = await axios.get("https://dummyjson.com/products");
+    setData(res.data.products);
+    console.log(res.data, "all Data");
+  };
+  useEffect(() => {
+    getAllData();
+  }, []);
   return (
     <div className={style.wrapper}>
       <Title headTitle={"Feature"} />

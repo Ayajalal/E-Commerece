@@ -11,63 +11,70 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Product from "../../shared/card-product";
 import SortFeature from "../sort-feature";
 
-const CategoryFeature = ({ data }) => {
-  // const [category, setCategory] = useState([]);
-  // const [data, setData] = useState([]);
-  const [filterData, setFilter] = useState(data);
+const CategoryFeature = () => {
   const [sortItem, setSortItem] = useState("");
+  const [category, setCategory] = useState([]);
+  const [product, setProduct] = useState([]);
+  const [filter, setFilter] = useState(product);
   const categoriesSet = new Set();
-  data && data.map((res) => categoriesSet.add(res.category));
-
-  let categories = [...categoriesSet];
-  console.log(categories);
-  // const getAllCategary = () => {
-  //   // let res = await axios.get("https://dummyjson.com/products/categories");
-
-  //   const categoryMap = data.map((res) => {
-  //     return res.category;
-  //   });
-  //   console.log(categoryMap + "ddd");
-  //   let categorySet = new Set([categoryMap]);
-  //   setCategory(categorySet);
-
-  //   // console.log(res);
-  // };
-
-  const getFilterData = (catItem) => {
-    console.log(catItem, "hj");
-    const filterByCat = data.filter((currItem) => {
-      return currItem.category === catItem;
-    });
-    setFilter(filterByCat);
-    // console.log({ filterByCat });
-  };
-  const handelData = (handelD) => {
-    console.log(handelD, "soretesd");
-    setSortItem(handelD);
-    console.log(sortItem + "sortItemS7888");
-    if (sortItem === "price") {
-      filterData.sort((a, b) => {
-        return a.price - b.price;
-      });
-    } else if (sortItem === "title") {
-      filterData.sort((a, b) => {
-        return a.title.localeCompare(b.title);
-      });
+  const getAllData = async () => {
+    const res = await axios.get("https://dummyjson.com/products");
+    const result = res.data.products;
+    if (result.length > 0) {
+      result.forEach((res) => categoriesSet.add(res.category)); //{}
+      setCategory([...categoriesSet]);
     }
-    setFilter(filterData);
-    console.log(filterData + "sorted7788");
+    setProduct(result);
+    setFilter(result);
+    console.log(res.data, "all Data");
   };
 
   useEffect(() => {
-    // getAllCategary();
+    getAllData();
+  }, []);
 
-    setFilter(data);
-  }, [data]);
+  const getFilterData = (catItem) => {
+    const filterByCat = product.filter((currItem) => {
+      return currItem.category === catItem;
+    });
+    setFilter(filterByCat);
+    console.log(filterByCat + "filterByCat");
+  };
+  const handelData = (handelD) => {
+    // console.log(handelD, "soretesd");
+    setSortItem(handelD);
+    // console.log(sortItem + "sortItemS7888");
+    if (sortItem === "price") {
+      filter.sort((a, b) => {
+        return a.price - b.price;
+      });
+      sortItem("");
+    } else if (sortItem === "title") {
+      filter.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
+      sortItem("");
+    }
+    setFilter(filter);
+
+    // console.log(filterData + "sorted7788");
+  };
+
+  // useEffect(() => {
+  //   console.log(data, "databefor");
+  //   if (data.length > 0) {
+  //     data.forEach((res) => categoriesSet.add(res.category)); //{}
+  //     // categories = [...categoriesSet];
+  //     console.log(categoriesSet, "CatagorySet ");
+  //   }
+
+  //   console.log(data, "Catagory ");
+  //   // setFilter(data);
+  // }, []);
 
   return (
     <div className={style.container}>
-      <SortFeature data={filterData} handelData={handelData} />
+      <SortFeature data={filter} handelData={handelData} />
       <div className={style.wrapper}>
         <div className={style.category}>
           <Grid container>
@@ -94,7 +101,8 @@ const CategoryFeature = ({ data }) => {
                 <AccordionDetails>
                   <Typography>
                     <ul>
-                      {categories.map((item, index) => {
+                      {console.log(category, "dd")}
+                      {category.map((item, index) => {
                         return (
                           <Grid item xs={12}>
                             <li key={index}>
@@ -120,12 +128,11 @@ const CategoryFeature = ({ data }) => {
             justify="center"
             spacing={{ xs: 2, md: 3 }}
           >
-            {filterData &&
-              filterData.map((filterItem, index) => (
-                <Grid item xs={12} sm={6} md={4} key={filterItem.id}>
-                  <Product item={filterItem} />{" "}
-                </Grid>
-              ))}
+            {filter.map((filterItem, index) => (
+              <Grid item xs={12} sm={6} md={4} key={filterItem.id}>
+                <Product item={filterItem} />{" "}
+              </Grid>
+            ))}
           </Grid>
         </div>
       </div>
