@@ -5,16 +5,10 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
 const SortFeature = ({ data, handelData }) => {
-  const [sortData, setSortData] = useState([]);
-
   const handleChange = (event) => {
     let selected = event.target.value;
-
     handelData(selected);
   };
-
-  // handelData(sortData);
-
   return (
     <div className={style.container}>
       <div className={style.wrapper}>

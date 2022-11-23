@@ -44,33 +44,21 @@ const CategoryFeature = () => {
     // console.log(handelD, "soretesd");
     setSortItem(handelD);
     // console.log(sortItem + "sortItemS7888");
-    if (sortItem === "price") {
+    if (handelD === "price") {
       filter.sort((a, b) => {
         return a.price - b.price;
       });
-      sortItem("");
-    } else if (sortItem === "title") {
+      // setSortItem("");
+    } else if (handelD === "title") {
       filter.sort((a, b) => {
         return a.title.localeCompare(b.title);
       });
-      sortItem("");
+      // setSortItem("");
     }
     setFilter(filter);
-
+    // setSortItem("");
     // console.log(filterData + "sorted7788");
   };
-
-  // useEffect(() => {
-  //   console.log(data, "databefor");
-  //   if (data.length > 0) {
-  //     data.forEach((res) => categoriesSet.add(res.category)); //{}
-  //     // categories = [...categoriesSet];
-  //     console.log(categoriesSet, "CatagorySet ");
-  //   }
-
-  //   console.log(data, "Catagory ");
-  //   // setFilter(data);
-  // }, []);
 
   return (
     <div className={style.container}>
