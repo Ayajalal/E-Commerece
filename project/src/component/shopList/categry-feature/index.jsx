@@ -10,6 +10,7 @@ import Grid from "@mui/material/Grid";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Product from "../../shared/card-product";
 import SortFeature from "../sort-feature";
+import AxiosInstance from "../../customHooks/axiosCustom";
 
 const CategoryFeature = () => {
   const [sortItem, setSortItem] = useState("");
@@ -18,7 +19,7 @@ const CategoryFeature = () => {
   const [filter, setFilter] = useState(product);
   const categoriesSet = new Set();
   const getAllData = async () => {
-    const res = await axios.get("https://dummyjson.com/products");
+    const res = await AxiosInstance.get("products");
     const result = res.data.products;
     if (result.length > 0) {
       result.forEach((res) => categoriesSet.add(res.category)); //{}

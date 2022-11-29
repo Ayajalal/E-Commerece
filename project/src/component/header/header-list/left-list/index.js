@@ -2,9 +2,16 @@ import style from "./style.module.css";
 import React, { useState } from "react";
 import MenuList from "../menu-list";
 import Icon from "../../../shared/icon";
+import Login from "../../../login/login";
 function LeftList() {
   const [isShow, setIsShow] = useState(false); ///change name
-
+  const [open, setOpen] = useState(false);
+  const handelOpen = () => {
+    setOpen(true);
+  };
+  const handelClose = () => {
+    setOpen(false);
+  };
   let listRight = ["fal fa-heart", "fal fa-search", "fal fa-shopping-bag"];
   return (
     <header>
@@ -26,7 +33,7 @@ function LeftList() {
         <div className={style["social-media"]}>
           <ul className={style["icon-desktop"]}>
             <li>
-              <a href="">Login</a>
+              <a onClick={handelOpen}>Login</a>
             </li>
             {listRight.map((item) => {
               return (
@@ -52,6 +59,7 @@ function LeftList() {
           <MenuList />
         </div>
       ) : null}
+      <Login open={open} handelClose={handelClose} />
     </header>
   );
 }

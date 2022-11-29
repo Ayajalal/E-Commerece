@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import style from "./style.module.css";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid";
-const SortFeature = ({ data, handelData }) => {
+const SortFeature = ({ handelData }) => {
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    // 👇️ clear input field value
+    ref.current.value = "";
+  };
   const handleChange = (event) => {
     let selected = event.target.value;
     handelData(selected);
@@ -22,6 +28,7 @@ const SortFeature = ({ data, handelData }) => {
 
               <FormControl>
                 <Select
+                  ref={ref}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   sx={{ minWidth: 200, height: 40 }}

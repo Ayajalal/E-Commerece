@@ -6,10 +6,11 @@ import Grid from "@mui/material/Grid";
 import React, { useState, useEffect } from "react";
 import CardProduct from "../shared/card-product";
 import axios from "axios";
+import AxiosInstance from "../customHooks/axiosCustom";
 function Wrapper() {
   const [data, setData] = useState([]);
   const getAllData = async () => {
-    const res = await axios.get("https://dummyjson.com/products");
+    const res = await AxiosInstance.get("/products");
     setData(res.data.products);
     console.log(res.data, "all Data");
   };
