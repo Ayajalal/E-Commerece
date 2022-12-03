@@ -6,6 +6,14 @@ import Login from "../../../login/login";
 function LeftList() {
   const [isShow, setIsShow] = useState(false); ///change name
   const [open, setOpen] = useState(false);
+  const [register, setRegister] = useState(false);
+  const [user, setUser] = useState({});
+  let username = "";
+  const handelRegister = (flag, data) => {
+    setUser(data);
+    setRegister(flag);
+  };
+  // const [open, setOpen] = useState(false);
   const handelOpen = () => {
     setOpen(true);
   };
@@ -33,7 +41,15 @@ function LeftList() {
         <div className={style["social-media"]}>
           <ul className={style["icon-desktop"]}>
             <li>
-              <a onClick={handelOpen}>Login</a>
+              {register ? (
+                <div className={style.aligned}>
+                  <img src={user.image} width="50" alt=""></img>
+
+                  <span>{user.username}</span>
+                </div>
+              ) : (
+                <a onClick={handelOpen}>Login</a>
+              )}
             </li>
             {listRight.map((item) => {
               return (
@@ -59,7 +75,11 @@ function LeftList() {
           <MenuList />
         </div>
       ) : null}
-      <Login open={open} handelClose={handelClose} />
+      <Login
+        open={open}
+        handelClose={handelClose}
+        handelRegister={handelRegister}
+      />
     </header>
   );
 }

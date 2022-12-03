@@ -6,25 +6,49 @@ import {
   DialogContent,
   TextField,
 } from "@mui/material";
-
+import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
 import style from "./style.module.css";
-const Login = ({ handelClose, handelOpen, open }) => {
+const Login = ({ handelClose, handelRegister, open }) => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  // const [user, setUser] = useState("");
+  // const [pwd, setPwd] = useState("");
+  const [formData, setFormData] = useState({});
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
   useEffect(() => {
     // userRef.current.focus();
   }, []);
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, pwd]);
+  const handelUserName = (e) => {
+    setFormData({ ...formData, username: e.target.value });
+  };
+  const handelPassword = (e) => {
+    setFormData({ ...formData, password: e.target.value });
+  };
   const handelSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post(
+      "https://dummyjson.com/auth/login",
+      { ...formData },
+
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    console.log(formData);
+    console.log(res);
+    handelRegister(true, res.data);
+    handelClose();
+
+    // fetch("https://dummyjson.com/auth/login", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ ...formData }),
+    // })
+    //   .then((res) => res.json())
+    //   .then(console.log);
   };
   return (
     <Dialog sx={{ m: 5, p: 5 }} maxWidth="lg" open={open}>
@@ -49,18 +73,18 @@ const Login = ({ handelClose, handelOpen, open }) => {
             fullWidth
             variant="standard"
             // ref={userRef}
-            onChange={(e) => setUser(e.target.value)}
-            value={user}
+            onChange={handelUserName}
+            value={formData.username}
           />
           <TextField
             required
-            value={pwd}
+            value={formData.password}
             id="standard-basic"
             label="Password"
             fullWidth
             variant="standard"
             sx={{ marginBottom: 3 }}
-            onChange={(e) => setPwd(e.target.value)}
+            onChange={handelPassword}
           />
           {/* <p ref={errMsg}>{errMsg}</p> */}
           <Button
@@ -68,6 +92,7 @@ const Login = ({ handelClose, handelOpen, open }) => {
             fullWidth
             color="success"
             sx={{ textAlign: "center" }}
+            onClick={handelSubmit}
           >
             Success
           </Button>

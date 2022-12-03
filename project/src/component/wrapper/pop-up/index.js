@@ -1,12 +1,16 @@
 import { Dialog, DialogTitle, DialogContent } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import Button from "@mui/material/Button";
 
 import style from "./style.module.css";
 
 import ProductSlider from "./product-slider";
+import { useNavigate } from "react-router-dom";
 
 import ProductDetails from "./product-details";
+import PDP from "../../../pages/PDP";
 const PopUp = ({ closePopUp, open, item, index }) => {
+  const navigate = useNavigate();
   const {
     title,
 
@@ -36,6 +40,19 @@ const PopUp = ({ closePopUp, open, item, index }) => {
           <div className={style.main}>
             <ProductSlider images={images} thumbnail={thumbnail} />
             <ProductDetails item={item} />
+
+            <Button
+              variant="contained"
+              sx={{
+                width: "302px",
+                backgroundColor: "#33333A",
+                mt: 12,
+                mx: "auto",
+              }}
+              onClick={() => navigate("pdp", { item })}
+            >
+              View Full product Details
+            </Button>
           </div>
         </DialogContent>
       </div>
