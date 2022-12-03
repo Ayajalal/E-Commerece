@@ -1,5 +1,3 @@
-import { map } from "jquery";
-import style from "./style.module.css";
 import Icon from "../../../shared/icon";
 const listLeft = ["SHOP", "FABRIC", "JOURNAL", "ABOUT"];
 function MenuList({ dir }) {

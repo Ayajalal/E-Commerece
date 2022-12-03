@@ -1,4 +1,3 @@
-import Modal from "react-modal";
 import React, { useState } from "react";
 import style from "./style.module.css";
 import Icon from "../../../shared/icon";
