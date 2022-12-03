@@ -4,7 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import axios from "axios";
+
 import style from "./style.module.css";
 import Grid from "@mui/material/Grid";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
